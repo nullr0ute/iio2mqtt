@@ -1,0 +1,41 @@
+# iio2mqtt Configuration File
+# Location: /etc/iio2mqtt.toml
+
+# Interval in seconds between sensor readings
+interval_seconds = 15
+
+# List of IIO devices to monitor
+# You can find available devices in /sys/bus/iio/devices/
+# Common device IDs: "iio:device0", "iio:device1", etc.
+devices = [
+    "iio:device0",
+    # "iio:device1",  # Uncomment to add more devices
+]
+
+# Channels to read from each device
+# Use ["all"] to read all available channels
+# Or specify individual channels like ["in_accel_x", "in_accel_y", "in_accel_z"]
+channels = ["all"]
+
+# Examples for specific sensor types:
+
+# For accelerometer (3-axis):
+# channels = ["in_accel_x", "in_accel_y", "in_accel_z"]
+
+# For gyroscope (3-axis):
+# channels = ["in_anglvel_x", "in_anglvel_y", "in_anglvel_z"]
+
+# For magnetometer (3-axis):
+# channels = ["in_magn_x", "in_magn_y", "in_magn_z"]
+
+# For temperature sensor:
+# channels = ["in_temp"]
+
+# For pressure sensor:
+# channels = ["in_pressure"]
+
+# For light/proximity sensor:
+# channels = ["in_illuminance", "in_proximity"]
+
+# Mixed sensors (reading multiple types):
+# channels = ["in_accel_x", "in_accel_y", "in_accel_z", "in_temp"]

@@ -1,0 +1,52 @@
+[project]
+name = "iio2mqtt"
+version = "0.1.0"
+description = "A small service to take IIO sensor readings and publish to MQTT"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { file = "LICENSE" }
+authors = [
+    {name = "Peter Robinson", email = "pbrobinson@gmail.com"}
+]
+keywords = ["iio", "sensors", "mqtt", "daemon", "industrial-io", "linux"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Intended Audience :: System Administrators",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Operating System :: POSIX :: Linux",
+    "Topic :: System :: Hardware",
+    "Topic :: System :: Monitoring",
+]
+
+dependencies = [
+    "paho-mqtt>=2.1.0",
+    "pylibiio>=0.23",
+    "tomli>=2.0.0",
+    "tomli-w>=1.0.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/nullr0ute/iio2mqtt"
+Documentation = "https://github.com/nullr0ute/iio2mqtt/blob/main/README.md"
+Repository = "https://github.com/nullr0ute/iio2mqtt"
+Issues = "https://github.com/nullr0ute/iio2mqtt/issues"
+
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project.scripts]
+iio2mqtt = "iio2mqtt:main"
+
+[tool.setuptools]
+packages = ["iio2mqtt"]
+
+[tool.setuptools.package-data]
+iio2mqtt = ["py.typed"]
